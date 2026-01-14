@@ -1,5 +1,5 @@
 function enviarWebhook(jogo) {
-  fetch("COLE_AQUI_SUA_URL_DO_WEBHOOK", {
+  fetch("https://discord.com/api/webhooks/1461101701267197984/X44Qhjy9Fq8-78rKvq9m5WCznEm3KIL3RWlB2n9s8BYwfyNb3yqO1d06qTVY9jLV0Twv", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
