@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PugHall | Admin Dashboard</title>
 
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#e74c3c">
-
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -39,43 +36,25 @@ body{
     position: relative;
 }
 
-/* Background Fofo com Opacidade */
 body::before {
     content: "";
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     background-image: url('https://i.imgur.com/rM43tnX.jpeg');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.15;
-    z-index: -1;
-    pointer-events: none;
+    background-size: cover; background-position: center;
+    opacity: 0.15; z-index: -1; pointer-events: none;
 }
 
 header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 30px;
-    background:rgba(26, 21, 18, 0.95);
-    backdrop-filter: blur(15px);
-    border-bottom:3px solid var(--red);
-    position:sticky;
-    top:0;
-    z-index:100;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:15px 30px; background:rgba(26, 21, 18, 0.95);
+    backdrop-filter: blur(15px); border-bottom:3px solid var(--red);
+    position:sticky; top:0; z-index:100;
 }
 
 .logo{
-    font-family: var(--font-title);
-    font-weight:700;
-    font-size:1.8rem;
-    color:var(--red);
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-family: var(--font-title); font-weight:700; font-size:1.8rem;
+    color:var(--red); display: flex; align-items: center; gap: 8px;
 }
 .logo span { color: #fff; }
 
@@ -85,14 +64,9 @@ header{
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:25px;}
 
 .card{
-    background:var(--card);
-    border-radius:20px;
-    overflow:hidden;
-    border:2px solid var(--border);
-    transition:.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
+    background:var(--card); border-radius:20px; overflow:hidden;
+    border:2px solid var(--border); transition:.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; flex-direction: column;
 }
 .card:hover{transform:translateY(-5px); border-color:var(--accent);}
 
@@ -103,74 +77,28 @@ header{
 .card-meta{font-size:12px;opacity:.7; display:flex; gap:10px; align-items:center; color: var(--pug-tan);}
 
 .tech-info {
-    background: rgba(0,0,0,0.3);
-    padding: 8px;
-    border-radius: 8px;
-    font-family: monospace;
-    font-size: 11px;
-    word-break: break-all;
-    color: #888;
-    margin-top: auto;
+    background: rgba(0,0,0,0.3); padding: 8px; border-radius: 8px;
+    font-family: monospace; font-size: 11px; color: #888; margin-top: auto;
 }
 
 .admin-actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding: 15px;
-    background: rgba(0,0,0,0.2);
-    border-top: 1px solid var(--border);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    padding: 15px; background: rgba(0,0,0,0.2); border-top: 1px solid var(--border);
 }
 
 .btn {
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: 800;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: 0.2s;
-    color: #fff;
+    border: none; padding: 12px; border-radius: 8px; font-weight: 800;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    gap: 8px; transition: 0.2s; color: #fff;
 }
 .btn:hover { transform: scale(1.05); }
 .btn-approve { background: var(--green); color: #000; }
 .btn-reject { background: var(--red); }
 .btn-preview { background: #333; width: 100%; margin-top: 10px; }
 
-/* Player Overlay (Igual ao site principal) */
-.player{
-    position:fixed;inset:0;background:#050403;display:none;flex-direction:column;z-index:2000;
-}
-.player-header{
-    padding:10px 20px;
-    background:#111;
-    border-bottom:1px solid #333;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    color: #fff;
-}
-.player-controls { display: flex; gap: 10px; }
-.player-btn {
-    background: #222; border: 1px solid #444; color: #ccc;
-    padding: 8px 12px; border-radius: 6px; cursor: pointer;
-    display: flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 600;
-    transition: 0.2s;
-}
-.player-btn:hover { background: #444; color: #fff; }
-.player-btn.close { background: var(--red); border-color: var(--red); color: #fff; }
-
+.player{position:fixed;inset:0;background:#050403;display:none;flex-direction:column;z-index:2000;}
+.player-header{padding:10px 20px;background:#111;border-bottom:1px solid #333;display:flex;justify-content:space-between;align-items:center;}
 iframe{width:100%;flex:1;border:none;background:#000;}
-
-/* Tutorial Style */
-.tutorial-container { position: fixed; bottom: 30px; right: 30px; z-index: 20000; display: none; align-items: flex-end; gap: 20px; max-width: 450px; pointer-events: none; }
-.tutorial-pug { width: 180px; height: auto; filter: drop-shadow(0 15px 35px rgba(0,0,0,0.6)); pointer-events: auto; }
-.tutorial-bubble { background: #1a1512; color: #fff; border: 2px solid var(--red); padding: 20px; border-radius: 25px 25px 0 25px; font-weight: 700; position: relative; cursor: pointer; pointer-events: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-.tutorial-bubble::after { content: 'Clique para continuar 🐾'; position: absolute; bottom: -20px; right: 0; font-size: 10px; opacity: 0.7; }
-.tutorial-highlight { z-index: 10001 !important; position: relative !important; outline: 4px solid var(--red) !important; box-shadow: 0 0 0 9999px rgba(0,0,0,0.8); pointer-events: none !important; background: var(--card) !important; }
 
 .empty-state { grid-column: 1/-1; text-align: center; padding: 50px; opacity: 0.5; }
 </style>
@@ -183,16 +111,11 @@ iframe{width:100%;flex:1;border:none;background:#000;}
         <button class="btn" id="btn-notify" style="background:#333" onclick="enableNotifications()">
             <i data-lucide="bell"></i> ATIVAR NOTIFICAÇÕES
         </button>
-        <button class="btn" style="background:var(--accent)" onclick="startAdminTutorial()">Help 🐾</button>
     </div>
 </header>
 
 <div class="main">
     <h2 class="section-title"><i data-lucide="list-checks"></i> FILA DE APROVAÇÃO</h2>
-    <div style="background:rgba(231, 76, 60, 0.1); padding:15px; border-radius:10px; margin-bottom:20px; border-left:4px solid var(--red); font-size:0.9rem">
-        <b>MODO MODERADOR:</b> Você está vendo jogos com <code>published: false</code>. Verifique o conteúdo antes de aprovar.
-    </div>
-    
     <div id="list" class="grid">
         <div class="empty-state">Carregando fila...</div>
     </div>
@@ -200,41 +123,17 @@ iframe{width:100%;flex:1;border:none;background:#000;}
 
 <div class="player" id="player">
     <div class="player-header">
-        <div style="display:flex; align-items:center; gap:10px">
-            <i data-lucide="gamepad-2" style="color:var(--accent)"></i>
-            <span id="gameTitle" style="font-weight:bold; font-size:1.1rem; color:#fff">TESTING ENVIRONMENT</span>
-        </div>
-        <div class="player-controls">
-            <button class="player-btn" onclick="reloadPreview()">
-                <i data-lucide="refresh-cw"></i> Reload
-            </button>
-            <button class="player-btn" onclick="toggleFullScreen()">
-                <i data-lucide="maximize"></i> Fullscreen
-            </button>
-            <button class="player-btn close" onclick="closeGame()">
-                <i data-lucide="x"></i> FECHAR
-            </button>
-        </div>
+        <span id="gameTitle" style="font-weight:bold; color:#fff">TESTANDO...</span>
+        <button class="btn btn-reject" onclick="closeGame()">FECHAR</button>
     </div>
-    <iframe id="frame" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen; gamepad" allowfullscreen></iframe>
-</div>
-
-<div class="tutorial-container" id="tutorialContainer">
-    <img src="https://i.imgur.com/BYJF3Xr.png" class="tutorial-pug" style="transform: scaleX(-1);">
-    <div class="tutorial-bubble" id="tutorialBubble" onclick="nextStep()"></div>
+    <iframe id="frame" allowfullscreen></iframe>
 </div>
 
 <script>
-// --- REGISTRO DO SERVICE WORKER (PWA) ---
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
-            .then(reg => console.log('Service Worker registrado com sucesso! 🐾', reg))
-            .catch(err => console.log('Falha ao registrar Service Worker:', err));
-    });
-}
-
+// --- AUDIO E CONFIGURAÇÃO ---
+const barkSound = new Audio('https://www.myinstants.com/media/sounds/dog-bark.mp3');
 const _0xgh = (s) => atob(s);
+
 const firebaseConfig = {
   apiKey: _0xgh("QUl6YVN5Q2hQUkpYQS1xTlpCVk02b29FY2pVYkI3OXhSVzFYTkFN"),
   authDomain: _0xgh("b255eGNoYXQtOGFkNmYuZmlyZWJhc2VhcHAuY29t"),
@@ -245,34 +144,38 @@ const firebaseConfig = {
   measurementId: _0xgh("Ry1TRkpKSEM1UE04")
 };
 
-let app;
-try {
-    app = firebase.initializeApp(firebaseConfig, "PugAdmin");
-} catch(e) {
-    app = firebase.app("PugAdmin");
-}
+let app = firebase.initializeApp(firebaseConfig, "PugAdmin");
 const db = app.firestore();
-
-const list = document.getElementById('list');
-const player = document.getElementById('player');
-const frame = document.getElementById('frame');
-const titleLabel = document.getElementById('gameTitle');
-
 let isFirstLoad = true;
 
-window.enableNotifications = () => {
-    if (!("Notification" in window)) {
-        alert("Seu navegador não suporta notificações de sistema.");
-        return;
+// --- SISTEMA DE BADGE E NOTIFICAÇÃO ---
+async function updateBadge(count) {
+    if ('setAppBadge' in navigator) {
+        if (count > 0) {
+            navigator.setAppBadge(count).catch(e => console.log(e));
+        } else {
+            navigator.clearAppBadge().catch(e => console.log(e));
+        }
     }
+}
+
+function notifyNewGame(title, author, img) {
+    if (Notification.permission === "granted") {
+        barkSound.play().catch(() => {}); // Latido!
+        
+        new Notification("🚨 NOVO JOGO!", {
+            body: `${title} por ${author}`,
+            icon: img || 'https://i.imgur.com/rM43tnX.jpeg',
+            vibrate: [200, 100, 200]
+        });
+    }
+}
+
+window.enableNotifications = () => {
     Notification.requestPermission().then(permission => {
         if (permission === "granted") {
-            new Notification("PugAdmin", { 
-                body: "Notificações ativadas! Você será avisado de novos jogos. 🐾",
-                icon: 'https://i.imgur.com/rM43tnX.jpeg',
-                tag: 'welcome-msg'
-            });
             updateNotifyBtn();
+            barkSound.play(); // Testa o som ao ativar
         }
     });
 };
@@ -287,44 +190,25 @@ function updateNotifyBtn() {
     }
 }
 
-if ("Notification" in window && Notification.permission === "granted") {
-    setTimeout(updateNotifyBtn, 500);
-}
+// --- RENDERIZAÇÃO E FILTRO ---
+db.collection("games").where("published", "==", false).onSnapshot(snap => {
+    // Atualiza a Badge com o número de jogos pendentes
+    updateBadge(snap.size);
 
-const unsubscribe = db.collection("games").where("published", "==", false).onSnapshot(snap => {
     if (!isFirstLoad) {
         snap.docChanges().forEach(change => {
             if (change.type === "added") {
                 const d = change.doc.data();
-                if (Notification.permission === "granted") {
-                    try {
-                        setTimeout(() => {
-                            const notif = new Notification("🚨 NOVO JOGO NA ÁREA!", {
-                                body: `${d.title} (de ${d.author}) chegou para análise! 🐾`,
-                                icon: d.img || 'https://i.imgur.com/rM43tnX.jpeg',
-                                vibrate: [200, 100, 200],
-                                requireInteraction: true,
-                                tag: d.title
-                            });
-                            notif.onclick = function() { 
-                                window.focus(); 
-                                this.close(); 
-                            };
-                        }, 500);
-                    } catch(e) { console.error("Erro notif:", e); }
-                }
+                notifyNewGame(d.title, d.author, d.img);
             }
         });
     }
 
+    const list = document.getElementById('list');
     list.innerHTML = "";
+
     if(snap.empty) {
-        list.innerHTML = `<div class="empty-state">
-            <i data-lucide="coffee" style="width:60px;height:60px;margin-bottom:10px"></i><br>
-            <h3>Tudo limpo, Chefe!</h3>
-            <p>Nenhum jogo pendente na fila.</p>
-        </div>`;
-        lucide.createIcons();
+        list.innerHTML = `<div class="empty-state"><h3>Tudo limpo, chefe!</h3></div>`;
         isFirstLoad = false;
         return;
     }
@@ -334,132 +218,45 @@ const unsubscribe = db.collection("games").where("published", "==", false).onSna
         const el = document.createElement('div');
         el.className = 'card';
         el.innerHTML = `
-            <div class="card-media">
-                <img src="${g.img}" alt="Capa">
-            </div>
+            <div class="card-media"><img src="${g.img}"></div>
             <div class="card-body">
                 <div class="card-title">${g.title}</div>
-                <div class="card-meta">
-                    <i data-lucide="user"></i> ${g.author} | 
-                    <i data-lucide="${g.platform==='mobile'?'smartphone':'monitor'}"></i> ${g.platform}
-                </div>
-                <button class="btn btn-preview" onclick="openPreview('${g.url}', '${g.title}')">
-                    <i data-lucide="play"></i> TESTAR JOGO
-                </button>
-                <div class="tech-info">
-                    Status: ${g.status}<br>
-                    Type: ${g.isOnline ? 'Online' : 'Offline'}
-                </div>
+                <div class="card-meta"><i data-lucide="user"></i> ${g.author}</div>
+                <button class="btn btn-preview" onclick="openPreview('${g.url}', '${g.title}')">TESTAR JOGO</button>
             </div>
             <div class="admin-actions">
-                <button class="btn btn-reject" onclick="reject('${doc.id}')"><i data-lucide="trash-2"></i> LIXO</button>
-                <button class="btn btn-approve" onclick="approve('${doc.id}')"><i data-lucide="check-circle"></i> APROVAR</button>
+                <button class="btn btn-reject" onclick="reject('${doc.id}')">LIXO</button>
+                <button class="btn btn-approve" onclick="approve('${doc.id}')">APROVAR</button>
             </div>
         `;
         list.appendChild(el);
     });
     lucide.createIcons();
     isFirstLoad = false;
-}, err => {
-    console.error("Firebase Error:", err);
-    list.innerHTML = `<div class="empty-state" style="color:var(--red); opacity:1">
-        <i data-lucide="alert-circle" style="width:60px;height:60px;margin-bottom:10px"></i><br>
-        <h3>Erro de Conexão!</h3>
-        <p>${err.message}</p>
-    </div>`;
-    lucide.createIcons();
-});
+}, err => console.error(err));
 
-async function approve(id){
-    if(!confirm("Publicar este jogo oficialmente?")) return;
-    try {
-        await db.collection("games").doc(id).update({published: true});
-    } catch(e) {
-        alert("Erro ao aprovar: " + e.message);
-    }
+// --- AÇÕES ---
+async function approve(id) {
+    if(confirm("Publicar jogo?")) await db.collection("games").doc(id).update({published: true});
 }
 
-async function reject(id){
-    if(!confirm("DELETAR permanentemente este jogo do banco de dados?")) return;
-    try {
-        await db.collection("games").doc(id).delete();
-    } catch(e) {
-        alert("Erro ao deletar: " + e.message);
-    }
+async function reject(id) {
+    if(confirm("Deletar jogo?")) await db.collection("games").doc(id).delete();
 }
 
 window.openPreview = (url, title) => {
-    player.style.display = 'flex';
-    frame.src = url;
-    titleLabel.innerText = "TESTING: " + title;
-    lucide.createIcons();
-}
-
-window.reloadPreview = () => {
-    frame.contentWindow.location.reload();
-}
-
-window.toggleFullScreen = () => {
-    if (!document.fullscreenElement) {
-        player.requestFullscreen().catch(err => {
-            alert(`Error: ${err.message}`);
-        });
-    } else {
-        document.exitFullscreen();
-    }
-}
+    document.getElementById('player').style.display = 'flex';
+    document.getElementById('frame').src = url;
+    document.getElementById('gameTitle').innerText = title;
+};
 
 window.closeGame = () => {
-    if (document.fullscreenElement) document.exitFullscreen();
-    player.style.display = 'none';
-    frame.src = '';
-}
+    document.getElementById('player').style.display = 'none';
+    document.getElementById('frame').src = '';
+};
 
-const steps = [
-    { el: ".logo", msg: "Psiu! Bem-vindo à Área Restrita. 🕵️‍♂️ Sou o Agente Pug e vou te mostrar como manter a ordem." },
-    { el: ".grid", msg: "Aqui aparecem os jogos que os usuários enviaram. Eles estão INVISÍVEIS para o público até você aprovar." },
-    { el: ".btn-preview", msg: "Sempre TESTE antes! Clique aqui para jogar e ver se não é vírus ou se funciona mesmo." },
-    { el: ".btn-approve", msg: "Se o jogo for bom, clique em APROVAR. Ele vai direto para a página inicial!" },
-    { el: ".btn-reject", msg: "Se for spam, +18 ou quebrado... LIXO nele! Isso deleta do banco para sempre." },
-    { el: ".logo", msg: "É isso, chefe. O destino do PugHall está em suas patas! 🐾" }
-];
-
-let curStep = 0;
-function startAdminTutorial() {
-    curStep = 0;
-    document.getElementById('tutorialContainer').style.display = 'flex';
-    showStep();
-}
-
-function showStep() {
-    if(curStep >= steps.length) {
-        document.getElementById('tutorialContainer').style.display = 'none';
-        document.querySelectorAll('.tutorial-highlight').forEach(e=>e.classList.remove('tutorial-highlight'));
-        return;
-    }
-    const s = steps[curStep];
-    const el = document.querySelector(s.el);
-    const bub = document.getElementById('tutorialBubble');
-    
-    document.querySelectorAll('.tutorial-highlight').forEach(e=>e.classList.remove('tutorial-highlight'));
-    if(el) {
-        el.classList.add('tutorial-highlight');
-        el.scrollIntoView({behavior:'smooth', block:'center'});
-    }
-    bub.innerText = s.msg;
-}
-
-window.nextStep = () => {
-    curStep++;
-    showStep();
-}
-
-setTimeout(() => {
-    if(!localStorage.getItem('admin_tut_seen')) {
-        startAdminTutorial();
-        localStorage.setItem('admin_tut_seen', 'true');
-    }
-}, 1500);
+// Auto-check permissão
+if (Notification.permission === "granted") updateNotifyBtn();
 </script>
 </body>
 </html>
